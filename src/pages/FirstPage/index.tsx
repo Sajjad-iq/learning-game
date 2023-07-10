@@ -1,7 +1,7 @@
-import { DragDropTraining } from "./components/DragDropTraining"
 import { Example } from "./components/Example"
 import { Roles } from "./components/Roles"
 import { TrainingOne } from "./components/TrainingOne"
+import { TrainingTow } from "./components/TrainingTow"
 import { VisualExplanation } from "./components/VisualExplanation"
 
 export const FirstPage = () => {
@@ -17,7 +17,7 @@ export const FirstPage = () => {
             <h1 className='font-bold text-lg text-red-600 mt-5'>تمارين</h1>
             <TrainingOne />
             <Example />
-            <DragDropTraining />
+            <TrainingTow />
         </section>
     )
 }

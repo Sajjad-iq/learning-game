@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
-import { TrainingButton } from '../../../../common/TrainingButtons'
 import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
-import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
 import { fourSwimmingBall, fiveBaseBall } from '../../utils'
+import { TrainingButton } from '../../../../common/TrainingButtons'
+import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
 
-export const SecundDragDropTraining = () => {
+
+export const TrainingTow = () => {
     const [selectedIcon, setSelectedIcon] = useState("")
     const [LeftHandInputValue, setLeftHandInputValue] = useState("")
     const [RightHandInputValue, setRightHandInputValue] = useState("")
@@ -28,7 +29,8 @@ export const SecundDragDropTraining = () => {
 
 
     return (
-        <section className='flex flex-col w-full justify-center py-3'>
+        <section className='flex flex-col w-full justify-center py-3 '>
+            <h2 className=' font-semibold text-lg text-red-700'>قم بكتابة العدد الصحيح ثم اختيار العلامة المناسبة</h2>
             <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p className='font-bold text-3xl'>{selectedIcon}</p>

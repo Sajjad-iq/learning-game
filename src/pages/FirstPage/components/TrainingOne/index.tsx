@@ -29,7 +29,7 @@ export const TrainingOne = () => {
                 TrainingNumber={1}
             >
                 <p className=' break-words w-fit'>قارن بين عددين واضغط على الإجابة </p>
-                <p className=' break-words w-fit'> الصحيحة</p>
+                <p className=' break-words w-fit mx-1'> الصحيحة</p>
             </TrainingHeader>
 
             <TrainingIcons LeftHandSide={SixCarrots} RightHandSide={ThreeCarrots} />

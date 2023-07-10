@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
+import { TrainingButton } from '../../../../common/TrainingButtons'
 import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
-import { fourSwimmingBall, fiveBaseBall } from '../../utils'
-import { TrainingButton } from '../../../../common/TrainingButtons'
 import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
+import { fourSwimmingBall, fiveBaseBall } from '../../../FirstPage/utils'
+import { TrainingHeader } from '../../../../common/TrainingHeader'
 
-
-export const DragDropTraining = () => {
+export const TrainingFive = () => {
     const [selectedIcon, setSelectedIcon] = useState("")
     const [LeftHandInputValue, setLeftHandInputValue] = useState("")
     const [RightHandInputValue, setRightHandInputValue] = useState("")
@@ -30,7 +30,15 @@ export const DragDropTraining = () => {
 
     return (
         <section className='flex flex-col w-full justify-center py-3  border-b-2'>
-            <h2 className=' font-semibold text-lg text-red-700'>قم بكتابة العدد الصحيح ثم اختيار العلامة المناسبة</h2>
+            <TrainingHeader
+                TrainingNumber={5}
+            >
+                <p className='w-fit'>أكتب العدد في</p>
+                <span className="border-2 border-sky-400 w-7 h-7 mx-2"></span>
+                <p className='w-fit'>وأضع الرمز المناسب </p>
+                <p className='w-fit font-bold text-lg'>{"< , > , ="}</p>
+            </TrainingHeader>
+
             <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p className='font-bold text-3xl'>{selectedIcon}</p>

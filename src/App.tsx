@@ -9,7 +9,7 @@ function App() {
   const [PageIndex, setPageIndex] = useState(0)
 
   return (
-    <section className='w-full min-h-screen flex flex-row justify-center items-center bg-slate-100 p-3 mb-16 relative overflow-scroll'>
+    <section className='w-full min-h-screen flex flex-row justify-center items-center p-3 mb-16 relative overflow-scroll'>
       {PageIndex === 0 ?
         <FirstPage />
         :
