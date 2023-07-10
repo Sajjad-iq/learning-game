@@ -3,8 +3,8 @@ import { TrainingButton } from '../../../../common/TrainingButtons'
 import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
 import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
-import { fourSwimmingBall, fiveBaseBall } from '../../../FirstPage/utils'
 import { TrainingHeader } from '../../../../common/TrainingHeader'
+import { FourTrees, TowTrees } from '../../utils'
 
 export const TrainingFive = () => {
     const [selectedIcon, setSelectedIcon] = useState("")
@@ -39,7 +39,7 @@ export const TrainingFive = () => {
                 <p className='w-fit font-bold text-lg'>{"< , > , ="}</p>
             </TrainingHeader>
 
-            <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
+            <TrainingIcons LeftHandSide={FourTrees} RightHandSide={TowTrees} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>

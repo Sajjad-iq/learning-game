@@ -6,7 +6,7 @@ type ProviderChildrenType = {
     children: ReactNode
 }
 
-export const GlobalContext = createContext<any>([])
+export const GlobalContext = createContext<any>({})
 
 const GlobalContextProvider = ({ children }: ProviderChildrenType) => {
 

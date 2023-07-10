@@ -3,8 +3,8 @@ import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingHeader } from '../../../../common/TrainingHeader'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
 import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
-import { SixCarrots, ThreeCarrots } from '../../../FirstPage/utils'
 import { TrainingButton } from '../../../../common/TrainingButtons'
+import { ThreeGhosts, FiveGhosts } from '../../utils'
 
 export const TrainingThree = () => {
 
@@ -14,13 +14,13 @@ export const TrainingThree = () => {
     useEffect(() => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (SixCarrots.length == ThreeCarrots.length) WinSound()
+                if (ThreeGhosts.length == FiveGhosts.length) WinSound()
                 else LoseSound()
             } else if (selectedIcon == ">") {
-                if (SixCarrots.length < ThreeCarrots.length) WinSound()
+                if (ThreeGhosts.length < FiveGhosts.length) WinSound()
                 else LoseSound()
             } else if (selectedIcon == "<") {
-                if (SixCarrots.length > ThreeCarrots.length) WinSound()
+                if (ThreeGhosts.length > FiveGhosts.length) WinSound()
                 else LoseSound()
             }
         }
@@ -32,11 +32,11 @@ export const TrainingThree = () => {
                 TrainingNumber={3}
             >
                 <p className=' break-words w-fit'>قارن بين عددين ثم ضع العلامة  </p>
-                <p className=' break-words w-fit'> الصحيحة</p>
+                <p className=' break-words w-fit mx-1'> الصحيحة</p>
             </TrainingHeader>
 
-            <TrainingIcons LeftHandSide={SixCarrots} RightHandSide={ThreeCarrots} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={SixCarrots.length} RightHandSide={ThreeCarrots.length} >
+            <TrainingIcons LeftHandSide={ThreeGhosts} RightHandSide={FiveGhosts} />
+            <TrainingCombine ShouldWrite={false} LeftHandSide={ThreeGhosts.length} RightHandSide={FiveGhosts.length} >
                 <p className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
             <TrainingButton setSelectedIcon={setSelectedIcon} />

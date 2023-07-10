@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingHeader } from '../../../../common/TrainingHeader'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
 import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
-import { SixCarrots, ThreeCarrots } from '../../../FirstPage/utils'
 import { TrainingButton } from '../../../../common/TrainingButtons'
+import { FivePencils, SixPencils } from '../../utils'
 
 export const TrainingFour = () => {
 
@@ -14,13 +14,13 @@ export const TrainingFour = () => {
     useEffect(() => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (SixCarrots.length == ThreeCarrots.length) WinSound()
+                if (SixPencils.length == FivePencils.length) WinSound()
                 else LoseSound()
             } else if (selectedIcon == ">") {
-                if (SixCarrots.length < ThreeCarrots.length) WinSound()
+                if (SixPencils.length < FivePencils.length) WinSound()
                 else LoseSound()
             } else if (selectedIcon == "<") {
-                if (SixCarrots.length > ThreeCarrots.length) WinSound()
+                if (SixPencils.length > FivePencils.length) WinSound()
                 else LoseSound()
             }
         }
@@ -40,8 +40,8 @@ export const TrainingFour = () => {
                 <p className='font-semibold text-base'>اقلام هند</p>
                 <p className='font-semibold text-base'>اقلام ماهر</p>
             </section>
-            <TrainingIcons LeftHandSide={SixCarrots} RightHandSide={ThreeCarrots} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={SixCarrots.length} RightHandSide={ThreeCarrots.length} >
+            <TrainingIcons LeftHandSide={SixPencils} RightHandSide={FivePencils} />
+            <TrainingCombine ShouldWrite={false} LeftHandSide={SixPencils.length} RightHandSide={FivePencils.length} >
                 <p className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 
