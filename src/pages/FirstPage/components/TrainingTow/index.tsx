@@ -16,13 +16,22 @@ export const TrainingTow = () => {
         if (LeftHandInputValue !== "" && RightHandInputValue !== "" && selectedIcon !== "") {
             if (selectedIcon == "=") {
                 if (LeftHandInputValue == RightHandInputValue) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == ">") {
                 if (LeftHandInputValue < RightHandInputValue) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == "<") {
                 if (LeftHandInputValue > RightHandInputValue) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             }
         }
     }, [LeftHandInputValue, RightHandInputValue, selectedIcon])

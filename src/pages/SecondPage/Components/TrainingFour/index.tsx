@@ -15,13 +15,22 @@ export const TrainingFour = () => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
                 if (SixPencils.length == FivePencils.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == ">") {
                 if (SixPencils.length < FivePencils.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == "<") {
                 if (SixPencils.length > FivePencils.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             }
         }
     }, [selectedIcon])

@@ -15,13 +15,22 @@ export const TrainingThree = () => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
                 if (ThreeGhosts.length == FiveGhosts.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == ">") {
                 if (ThreeGhosts.length < FiveGhosts.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             } else if (selectedIcon == "<") {
                 if (ThreeGhosts.length > FiveGhosts.length) WinSound()
-                else LoseSound()
+                else {
+                    LoseSound()
+                    window.alert("خطأ")
+                }
             }
         }
     }, [selectedIcon])
