@@ -1,11 +1,7 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { FirstPage } from './pages/FirstPage'
 
-
-
 const SecondPage = lazy(() => import('./pages/SecondPage'))
-
-
 
 function App() {
 
@@ -44,7 +40,7 @@ function App() {
         </div>
       </section>
     }>
-      <section className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll'>
+      <section data-testid="app" className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll'>
         {PageIndex === 0 ?
           <FirstPage />
           :
