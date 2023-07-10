@@ -40,14 +40,14 @@ function App() {
         </div>
       </section>
     }>
-      <section data-testid="app" className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll'>
+      <section data-testid="app" className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll md:mb-5 lg:mb-8'>
         {PageIndex === 0 ?
           <FirstPage />
           :
           <SecondPage />
         }
         <section style={{ display: NavButtonsActive ? "flex" : "none" }} className={`fixed bottom-0 w-full px-10 pb-3 ${PageIndex == 0 ? ` justify-start` : `justify-end`} `}>
-          <button onClick={() => setPageIndex(PageIndex === 0 ? 1 : 0)} className='font-bold text-3xl text-cyan-500 animate-bounce'>{PageIndex == 0 ? "<" : ">"}</button>
+          <button onClick={() => setPageIndex(PageIndex === 0 ? 1 : 0)} className='font-bold text-3xl text-cyan-500 animate-bounce md:text-4xl lg:text-5xl 2xl:text-6xl'>{PageIndex == 0 ? "<" : ">"}</button>
         </section>
         <span className='w-full' ref={BottomRef} ></span>
       </section>
