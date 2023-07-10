@@ -49,7 +49,7 @@ export const TrainingTow = () => {
 
     return (
         <section className='flex flex-col w-full justify-center py-3 pt-6'>
-            <h2 className=' font-semibold text-lg text-red-700'>قم بكتابة العدد الصحيح ثم اختيار العلامة المناسبة</h2>
+            <h2 className=' text-base text-red-700'>قم بكتابة العدد الصحيح ثم اختيار العلامة المناسبة</h2>
             <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>

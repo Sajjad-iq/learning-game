@@ -19,8 +19,8 @@ export const TrainingOne = () => {
 
     const Win = () => {
         WinSound()
-        setRightAnswer(false)
         setRightAnswer(true)
+        setWrongAnswer(false)
     }
 
     return (

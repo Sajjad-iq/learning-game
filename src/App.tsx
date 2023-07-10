@@ -1,6 +1,8 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { FirstPage } from './pages/FirstPage'
 import { LadingScreen } from './common/LoadingScreen'
+import Arrow from './assets/icons/NicePng_yellow-arrow-png_1709964.webp'
+
 const SecondPage = lazy(() => import('./pages/SecondPage'))
 
 function App() {
@@ -38,8 +40,11 @@ function App() {
           :
           <SecondPage />
         }
+
         <section style={{ display: NavButtonsActive ? "flex" : "none" }} className={`fixed bottom-0 w-full px-10 pb-3 ${PageIndex == 0 ? ` justify-start` : `justify-end`} `}>
-          <button onClick={() => setPageIndex(PageIndex === 0 ? 1 : 0)} className='font-bold text-3xl text-cyan-500 animate-bounce md:text-4xl lg:text-5xl 2xl:text-6xl'>{PageIndex == 0 ? "<" : ">"}</button>
+          <button onClick={() => setPageIndex(PageIndex === 0 ? 1 : 0)} className='font-bold text-3xl text-cyan-500 animate-bounce md:text-4xl lg:text-5xl 2xl:text-6xl'>
+            <img src={Arrow} alt='navigation button' className={`w-10 h-8 ${PageIndex === 0 ? `` : `rotate-180`}`} />
+          </button>
         </section>
         <span className='w-full' ref={BottomRef} ></span>
       </section>

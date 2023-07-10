@@ -19,9 +19,12 @@ export const Example = () => {
             <h2 className='font-bold text-red-700'>مثال :</h2>
 
             <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={fourSwimmingBall.length} RightHandSide={fiveBaseBall.length} >
-                <p className='font-bold text-xl'>{">"}</p>
-            </TrainingCombine>
+
+            <section className="flex justify-around items-center w-full p-1">
+                <p className=" text-lg font-semibold border-2 border-gray-800 bor w-8 h-8 flex justify-center items-center">{5}</p>
+                <p className='font-bold text-3xl'>{">"}</p>
+                <p className=" text-lg font-semibold border-2 border-gray-800 w-8 h-8 flex justify-center items-center">{4}</p>
+            </section>
         </section>
     )
 }

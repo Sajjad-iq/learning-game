@@ -53,8 +53,8 @@ export const TrainingSix = () => {
             <TrainingHeader
                 TrainingNumber={6}
             >
-                <p className=' break-words w-fit'>عدد الصحون على المائدة 5 وعدد </p>
-                <p className=' break-words w-fit mx-1'>الجالسين 6 أي العددين أصغر؟</p>
+                <p className=' break-words w-fit'>{"عدد الصحون على المائدة 5 وعدد الجالسين"}</p>
+                <p className=' break-words w-fit mx-1'>{' 6 أي العددين أصغر'}</p>
             </TrainingHeader>
 
             <TrainingIcons LeftHandSide={FiveDish} RightHandSide={SixGirls} />
