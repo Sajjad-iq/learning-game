@@ -54,7 +54,10 @@ export const TrainingSix = () => {
                 <p className=' break-words w-fit'>{"عدد الصحون على المائدة 5 وعدد الجالسين"}</p>
                 <p className=' break-words w-fit mx-1'>{' 6 أي العددين أصغر'}</p>
             </TrainingHeader>
-
+            <section className='flex w-full justify-between px-2'>
+                <p className='font-semibold text-base'>عدد الجالسين</p>
+                <p className='font-semibold text-base'>عدد الصحون</p>
+            </section>
             <TrainingIcons LeftHandSide={FiveDish} RightHandSide={SixGirls} />
             <TrainingCombine IsRightAnswer={IsRightAnswer} ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
