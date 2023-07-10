@@ -1,7 +1,6 @@
 import { DragDropTraining } from "./components/DragDropTraining"
 import { Example } from "./components/Example"
 import { Roles } from "./components/Roles"
-import { SecundDragDropTraining } from "./components/SecundDragDropTraining"
 import { TrainingOne } from "./components/TrainingOne"
 import { VisualExplanation } from "./components/VisualExplanation"
 
@@ -19,7 +18,6 @@ export const FirstPage = () => {
             <TrainingOne />
             <Example />
             <DragDropTraining />
-            <SecundDragDropTraining />
         </section>
     )
 }
