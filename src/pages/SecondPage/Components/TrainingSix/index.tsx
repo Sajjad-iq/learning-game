@@ -11,28 +11,39 @@ export const TrainingSix = () => {
     const [LeftHandInputValue, setLeftHandInputValue] = useState("")
     const [RightHandInputValue, setRightHandInputValue] = useState("")
     const { WinSound, LoseSound } = useContext(GlobalContext)
+    const [IsRightAnswer, setIsRightAnswer] = useState(true)
 
     useEffect(() => {
         if (LeftHandInputValue !== "" && RightHandInputValue !== "" && selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (LeftHandInputValue == RightHandInputValue) WinSound()
+                if (LeftHandInputValue == RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == ">") {
-                if (LeftHandInputValue < RightHandInputValue) WinSound()
+                if (LeftHandInputValue < RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == "<") {
-                if (LeftHandInputValue > RightHandInputValue) WinSound()
-                else {
-                    LoseSound()
-                    window.alert("خطأ")
+                if (LeftHandInputValue > RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
                 }
+
+            } else {
+                LoseSound()
+                setIsRightAnswer(false)
             }
+
         }
     }, [LeftHandInputValue, RightHandInputValue, selectedIcon])
 
@@ -48,7 +59,7 @@ export const TrainingSix = () => {
 
             <TrainingIcons LeftHandSide={FiveDish} RightHandSide={SixGirls} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
-                <p className='font-bold text-3xl'>{selectedIcon}</p>
+                <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 
             <TrainingButton setSelectedIcon={setSelectedIcon} />

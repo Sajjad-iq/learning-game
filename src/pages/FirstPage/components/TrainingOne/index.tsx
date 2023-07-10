@@ -15,7 +15,6 @@ export const TrainingOne = () => {
         LoseSound()
         setWrongAnswer(true)
         setRightAnswer(false)
-        window.alert("خطأ")
     }
 
     const Win = () => {

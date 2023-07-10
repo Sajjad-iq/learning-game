@@ -10,26 +10,36 @@ export const TrainingFour = () => {
 
     const { WinSound, LoseSound } = useContext(GlobalContext)
     const [selectedIcon, setSelectedIcon] = useState("")
+    const [IsRightAnswer, setIsRightAnswer] = useState(true)
 
     useEffect(() => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (SixPencils.length == FivePencils.length) WinSound()
+                if (SixPencils.length == FivePencils.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == ">") {
-                if (SixPencils.length < FivePencils.length) WinSound()
+                if (SixPencils.length < FivePencils.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == "<") {
-                if (SixPencils.length > FivePencils.length) WinSound()
+                if (SixPencils.length > FivePencils.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             }
         }
@@ -51,7 +61,7 @@ export const TrainingFour = () => {
             </section>
             <TrainingIcons LeftHandSide={SixPencils} RightHandSide={FivePencils} />
             <TrainingCombine ShouldWrite={false} LeftHandSide={SixPencils.length} RightHandSide={FivePencils.length} >
-                <p className='font-bold text-3xl'>{selectedIcon}</p>
+                <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 
             <TrainingButton setSelectedIcon={setSelectedIcon} />

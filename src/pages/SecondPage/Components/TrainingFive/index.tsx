@@ -11,26 +11,36 @@ export const TrainingFive = () => {
     const [LeftHandInputValue, setLeftHandInputValue] = useState("")
     const [RightHandInputValue, setRightHandInputValue] = useState("")
     const { WinSound, LoseSound } = useContext(GlobalContext)
+    const [IsRightAnswer, setIsRightAnswer] = useState(true)
 
     useEffect(() => {
         if (LeftHandInputValue !== "" && RightHandInputValue !== "" && selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (LeftHandInputValue == RightHandInputValue) WinSound()
+                if (LeftHandInputValue == RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == ">") {
-                if (LeftHandInputValue < RightHandInputValue) WinSound()
+                if (LeftHandInputValue < RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == "<") {
-                if (LeftHandInputValue > RightHandInputValue) WinSound()
+                if (LeftHandInputValue > RightHandInputValue) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             }
         }
@@ -50,7 +60,7 @@ export const TrainingFive = () => {
 
             <TrainingIcons LeftHandSide={FourTrees} RightHandSide={TowTrees} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
-                <p className='font-bold text-3xl'>{selectedIcon}</p>
+                <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 
             <TrainingButton setSelectedIcon={setSelectedIcon} />

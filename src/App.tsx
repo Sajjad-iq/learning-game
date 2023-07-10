@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { FirstPage } from './pages/FirstPage'
-
+import { LadingScreen } from './common/LoadingScreen'
 const SecondPage = lazy(() => import('./pages/SecondPage'))
 
 function App() {
@@ -30,16 +30,8 @@ function App() {
 
   return (
 
-    <Suspense fallback={
-      <section className="loading-animation-header-wrapper">
-        <div className="gray-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </section>
-    }>
+    <Suspense fallback={<LadingScreen />}>
+
       <section data-testid="app" className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll md:mb-5 lg:mb-8'>
         {PageIndex === 0 ?
           <FirstPage />

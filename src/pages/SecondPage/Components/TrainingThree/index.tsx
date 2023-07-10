@@ -10,26 +10,37 @@ export const TrainingThree = () => {
 
     const { WinSound, LoseSound } = useContext(GlobalContext)
     const [selectedIcon, setSelectedIcon] = useState("")
+    const [IsRightAnswer, setIsRightAnswer] = useState(true)
+
 
     useEffect(() => {
         if (selectedIcon !== "") {
             if (selectedIcon == "=") {
-                if (ThreeGhosts.length == FiveGhosts.length) WinSound()
+                if (ThreeGhosts.length == FiveGhosts.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == ">") {
-                if (ThreeGhosts.length < FiveGhosts.length) WinSound()
+                if (ThreeGhosts.length < FiveGhosts.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             } else if (selectedIcon == "<") {
-                if (ThreeGhosts.length > FiveGhosts.length) WinSound()
+                if (ThreeGhosts.length > FiveGhosts.length) {
+                    WinSound()
+                    setIsRightAnswer(true)
+                }
                 else {
                     LoseSound()
-                    window.alert("خطأ")
+                    setIsRightAnswer(false)
                 }
             }
         }
@@ -46,7 +57,7 @@ export const TrainingThree = () => {
 
             <TrainingIcons LeftHandSide={ThreeGhosts} RightHandSide={FiveGhosts} />
             <TrainingCombine ShouldWrite={false} LeftHandSide={ThreeGhosts.length} RightHandSide={FiveGhosts.length} >
-                <p className='font-bold text-3xl'>{selectedIcon}</p>
+                <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
             <TrainingButton setSelectedIcon={setSelectedIcon} />
         </section>
