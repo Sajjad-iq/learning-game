@@ -4,7 +4,7 @@ import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingHeader } from '../../../../common/TrainingHeader'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
 import { GlobalContext } from '../../../../setup/ContextManger/GlobalContext'
-import { fourSwimmingBall, fiveBaseBall } from '../../../FirstPage/utils'
+import { FiveDish, SixGirls } from '../../utils'
 
 export const TrainingSix = () => {
     const [selectedIcon, setSelectedIcon] = useState("")
@@ -37,7 +37,7 @@ export const TrainingSix = () => {
                 <p className=' break-words w-fit mx-1'>الجالسين 6 أي العددين أصغر؟</p>
             </TrainingHeader>
 
-            <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
+            <TrainingIcons LeftHandSide={FiveDish} RightHandSide={SixGirls} />
             <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>

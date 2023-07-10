@@ -16,9 +16,10 @@
 
 
 body,
-#root {
+.root {
     overflow: scroll;
-    min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .m-sm {

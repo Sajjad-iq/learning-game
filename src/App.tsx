@@ -1,6 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { FirstPage } from './pages/FirstPage'
-import { SecondPage } from './pages/SecondPage'
+
+
+
+const SecondPage = lazy(() => import('./pages/SecondPage'))
 
 
 
@@ -30,18 +33,29 @@ function App() {
 
 
   return (
-    <section className='w-full min-h-screen flex flex-col justify-center items-center p-3 mb-16 relative overflow-scroll'>
-      {PageIndex === 0 ?
-        <FirstPage />
-        :
-        <SecondPage />
-      }
-      <section style={{ display: NavButtonsActive ? "block" : "none" }} >
-        <button style={{ display: PageIndex === 1 ? "none" : "block" }} onClick={() => setPageIndex(1)} className='font-bold text-3xl text-cyan-500 fixed bottom-5 right-10'>{"<"}</button>
-        <button style={{ display: PageIndex === 0 ? "none" : "block" }} onClick={() => setPageIndex(0)} className='font-bold text-3xl text-cyan-500 fixed bottom-5 left-10'>{">"}</button>
+
+    <Suspense fallback={
+      <section className="loading-animation-header-wrapper">
+        <div className="gray-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </section>
-      <span className='w-full' ref={BottomRef} ></span>
-    </section>
+    }>
+      <section className='w-screen min-h-screen flex flex-col justify-center items-center p-3 mb-2 relative overflow-scroll'>
+        {PageIndex === 0 ?
+          <FirstPage />
+          :
+          <SecondPage />
+        }
+        <section style={{ display: NavButtonsActive ? "flex" : "none" }} className={`fixed bottom-0 w-full px-10 pb-3 ${PageIndex == 0 ? ` justify-start` : `justify-end`} `}>
+          <button onClick={() => setPageIndex(PageIndex === 0 ? 1 : 0)} className='font-bold text-3xl text-cyan-500 animate-bounce'>{PageIndex == 0 ? "<" : ">"}</button>
+        </section>
+        <span className='w-full' ref={BottomRef} ></span>
+      </section>
+    </Suspense>
   )
 }
 
