@@ -37,13 +37,11 @@ export const TrainingSix = () => {
                 if (LeftHandInputValue > RightHandInputValue) {
                     WinSound()
                     setIsRightAnswer(true)
+                } else {
+                    LoseSound()
+                    setIsRightAnswer(false)
                 }
-
-            } else {
-                LoseSound()
-                setIsRightAnswer(false)
             }
-
         }
     }, [LeftHandInputValue, RightHandInputValue, selectedIcon])
 

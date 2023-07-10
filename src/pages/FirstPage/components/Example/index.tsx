@@ -1,4 +1,3 @@
-import { TrainingCombine } from '../../../../common/TrainingCombine'
 import { TrainingHeader } from '../../../../common/TrainingHeader'
 import { TrainingIcons } from '../../../../common/TrainingIcons'
 import { fiveBaseBall, fourSwimmingBall } from '../../utils'
