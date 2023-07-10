@@ -60,7 +60,7 @@ export const TrainingFour = () => {
                 <p className='font-semibold text-base'>اقلام ماهر</p>
             </section>
             <TrainingIcons LeftHandSide={SixPencils} RightHandSide={FivePencils} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={SixPencils.length} RightHandSide={FivePencils.length} >
+            <TrainingCombine IsRightAnswer={IsRightAnswer} ShouldWrite={false} LeftHandSide={SixPencils.length} RightHandSide={FivePencils.length} >
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 

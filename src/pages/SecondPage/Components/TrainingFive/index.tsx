@@ -59,7 +59,7 @@ export const TrainingFive = () => {
             </TrainingHeader>
 
             <TrainingIcons LeftHandSide={FourTrees} RightHandSide={TowTrees} />
-            <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
+            <TrainingCombine IsRightAnswer={IsRightAnswer} ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 

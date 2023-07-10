@@ -2,7 +2,6 @@ import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { FirstPage } from './pages/FirstPage'
 import { LadingScreen } from './common/LoadingScreen'
 import Arrow from './assets/icons/NicePng_yellow-arrow-png_1709964.webp'
-
 const SecondPage = lazy(() => import('./pages/SecondPage'))
 
 function App() {

@@ -56,7 +56,7 @@ export const TrainingThree = () => {
             </TrainingHeader>
 
             <TrainingIcons LeftHandSide={ThreeGhosts} RightHandSide={FiveGhosts} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={ThreeGhosts.length} RightHandSide={FiveGhosts.length} >
+            <TrainingCombine IsRightAnswer={IsRightAnswer} ShouldWrite={false} LeftHandSide={ThreeGhosts.length} RightHandSide={FiveGhosts.length} >
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
             <TrainingButton setSelectedIcon={setSelectedIcon} />

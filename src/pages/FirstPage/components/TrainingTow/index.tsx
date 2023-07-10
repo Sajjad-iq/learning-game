@@ -11,7 +11,7 @@ export const TrainingTow = () => {
     const [LeftHandInputValue, setLeftHandInputValue] = useState("")
     const [RightHandInputValue, setRightHandInputValue] = useState("")
     const { WinSound, LoseSound } = useContext(GlobalContext)
-    const [IsRightAnswer, setIsRightAnswer] = useState(true)
+    const [IsRightAnswer, setIsRightAnswer] = useState<boolean>(true)
 
     useEffect(() => {
         if (LeftHandInputValue !== "" && RightHandInputValue !== "" && selectedIcon !== "") {
@@ -51,7 +51,7 @@ export const TrainingTow = () => {
         <section className='flex flex-col w-full justify-center py-3 pt-6'>
             <h2 className=' text-base text-red-700'>قم بكتابة العدد الصحيح ثم اختيار العلامة المناسبة</h2>
             <TrainingIcons LeftHandSide={fourSwimmingBall} RightHandSide={fiveBaseBall} />
-            <TrainingCombine ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
+            <TrainingCombine IsRightAnswer={IsRightAnswer} ShouldWrite={true} LeftHandSideChange={setLeftHandInputValue} RightHandSideChange={setRightHandInputValue}>
                 <p style={{ color: IsRightAnswer ? "green" : "red" }} className='font-bold text-3xl'>{selectedIcon}</p>
             </TrainingCombine>
 

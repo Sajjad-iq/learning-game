@@ -33,7 +33,7 @@ export const TrainingOne = () => {
             </TrainingHeader>
 
             <TrainingIcons LeftHandSide={SixCarrots} RightHandSide={ThreeCarrots} />
-            <TrainingCombine ShouldWrite={false} LeftHandSide={SixCarrots.length} RightHandSide={ThreeCarrots.length} >
+            <TrainingCombine IsRightAnswer={true} ShouldWrite={false} LeftHandSide={SixCarrots.length} RightHandSide={ThreeCarrots.length} >
                 <section className='flex flex-col'>
                     <button className={`font-semibold bg-gray-300 p-2 m-1 rounded ${wrongAnswer ? ` text-red-600` : ` text-gray-900`}`} onClick={Lose} >ثلاثة أكبر من ستة؟</button>
                     <button className={`font-semibold bg-gray-300 p-2 m-1  rounded ${rightAnswer ? `text-green-600` : ` text-gray-900`}`} onClick={Win}>ثلاثة أصغر من ستة؟</button>
