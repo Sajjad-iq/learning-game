@@ -15,7 +15,7 @@ export const FirstPage = () => {
 
     return (
         <section data-testid="first-page" className='w-full shadow-md flex flex-col items-center p-2 bg-slate-50 md:w-11/12 lg:w-8/12 2xl:w-2/4'>
-            <header className='p-3 bg-amber-300 text-center w-full rounded'>
+            <header className='p-3 bg-amber-300 text-center w-full rounded my-3'>
                 <h1 ref={FocusREf} className="text-zinc-900 font-bold" >مقارنة الأعداد حتى 9</h1>
             </header>
 

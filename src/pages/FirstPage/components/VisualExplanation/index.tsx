@@ -2,7 +2,7 @@ import { SixCarrots, ThreeCarrots } from "../../utils"
 
 export const VisualExplanation = () => {
     return (
-        <article className='w-full rounded my-1 p-3 flex flex-col items-center border-b-2 pb-4 '>
+        <article className='w-full rounded  my-2 py-4 pb-8 flex flex-col items-center border-b-2  '>
 
             <section className="flex flex-row  p-1 ">
                 {SixCarrots.map((e: string, i) => {

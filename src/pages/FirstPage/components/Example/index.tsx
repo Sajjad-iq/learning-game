@@ -6,7 +6,7 @@ import { fiveBaseBall, fourSwimmingBall } from '../../utils'
 export const Example = () => {
 
     return (
-        <section className='w-full flex flex-col border-b-2 pb-4'>
+        <section className='w-full flex flex-col border-b-2 py-6 '>
             <TrainingHeader
                 TrainingNumber={2}
             >

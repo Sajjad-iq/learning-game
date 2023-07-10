@@ -25,7 +25,7 @@ export const TrainingOne = () => {
     }
 
     return (
-        <section className='w-full flex flex-col border-b-2 pb-4'>
+        <section className='w-full flex flex-col border-b-2 pb-8'>
             <TrainingHeader
                 TrainingNumber={1}
             >

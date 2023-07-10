@@ -38,7 +38,7 @@ export const TrainingSix = () => {
 
 
     return (
-        <section className='flex flex-col w-full justify-center py-3 '>
+        <section className='flex flex-col w-full justify-center py-6 '>
             <TrainingHeader
                 TrainingNumber={6}
             >
